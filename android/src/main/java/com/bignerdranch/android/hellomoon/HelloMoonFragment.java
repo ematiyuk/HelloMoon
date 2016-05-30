@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class HelloMoonFragment extends Fragment {
+    private AudioPlayer mPlayer = new AudioPlayer();
     private Button mPlayButton;
     private Button mStopButton;
 
@@ -19,5 +20,13 @@ public class HelloMoonFragment extends Fragment {
         mStopButton = (Button) view.findViewById(R.id.hellomoon_stopButton);
 
         return view;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        /* it prevents the MediaPlayer from continuing playback after
+           the fragment has been destroyed */
+        mPlayer.stop();
     }
 }
