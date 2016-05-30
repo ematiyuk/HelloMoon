@@ -1,5 +1,6 @@
 package com.bignerdranch.android.hellomoon;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class HelloMoonFragment extends Fragment {
-    private AudioPlayer mPlayer = new AudioPlayer();
+    private MediaPlayer mPlayer;
     private Button mPlayButton;
     private Button mStopButton;
 
@@ -20,14 +21,21 @@ public class HelloMoonFragment extends Fragment {
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPlayer.play(getActivity());
+                if ((mPlayer != null) && mPlayer.isPlaying()) {
+                    mPlayer.pause();
+                    mPlayButton.setText(R.string.hellomoon_resume);
+                } else {
+                    playAudio();
+                    mPlayButton.setText(R.string.hellomoon_pause);
+                }
             }
         });
         mStopButton = (Button) view.findViewById(R.id.hellomoon_stopButton);
         mStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPlayer.stop();
+                stopAudioPlayback();
+                mPlayButton.setText(R.string.hellomoon_play);
             }
         });
 
@@ -39,6 +47,33 @@ public class HelloMoonFragment extends Fragment {
         super.onDestroy();
         /* it prevents the MediaPlayer from continuing playback after
            the fragment has been destroyed */
-        mPlayer.stop();
+        stopAudioPlayback();
+    }
+
+    private void playAudio() {
+        if (mPlayer == null) {
+
+            mPlayer = MediaPlayer.create(getActivity(), R.raw.one_small_step);
+
+            mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                /* Calling stopAudioPlayback() when the file has finished playing releases your hold
+           on the MediaPlayer instance as soon as you no longer need it */
+                    stopAudioPlayback();
+
+                    mPlayButton.setText(R.string.hellomoon_play);
+                }
+            });
+        }
+
+        mPlayer.start();
+    }
+
+    private void stopAudioPlayback() {
+        if (mPlayer != null) {
+            mPlayer.release();
+            mPlayer = null;
+        }
     }
 }
