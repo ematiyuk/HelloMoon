@@ -1,3 +1,3 @@
 # HelloMoon
 
-This app plays a historical audio file.
+This app plays historical audio and video files.
