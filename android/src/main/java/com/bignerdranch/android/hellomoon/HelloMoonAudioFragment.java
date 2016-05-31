@@ -51,9 +51,16 @@ public class HelloMoonAudioFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 stopAudioPlayback();
-                mPlayButton.setText(R.string.hellomoon_play);
             }
         });
+
+        if (mPlayer == null) {
+            mPlayButton.setText(R.string.hellomoon_play);
+        } else if (mPlayer.isPlaying()) {
+            mPlayButton.setText(R.string.hellomoon_pause);
+        } else {
+            mPlayButton.setText(R.string.hellomoon_resume);
+        }
 
         return view;
     }
@@ -77,8 +84,6 @@ public class HelloMoonAudioFragment extends Fragment {
                 /* Calling stopAudioPlayback() when the file has finished playing releases your hold
            on the MediaPlayer instance as soon as you no longer need it */
                     stopAudioPlayback();
-
-                    mPlayButton.setText(R.string.hellomoon_play);
                 }
             });
         }
@@ -90,6 +95,8 @@ public class HelloMoonAudioFragment extends Fragment {
         if (mPlayer != null) {
             mPlayer.release();
             mPlayer = null;
+
+            mPlayButton.setText(R.string.hellomoon_play);
         }
     }
 }
