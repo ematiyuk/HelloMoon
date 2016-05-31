@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">HelloMoon</string>
+    <string name="hellomoon_play">Play</string>
+    <string name="hellomoon_stop">Stop</string>
+    <string name="hellomoon_resume">Resume</string>
+    <string name="hellomoon_pause">Pause</string>
+    <string name="hellomoon_loading">Loading&#8230;</string>
+    <string name="hellomoon_goto_video">Go to video</string>
+    <string name="hellomoon_audio_description">Neil Armstrong stepping onto the Moon</string>
+    <string name="hellomoon_video_description">Astronaut Harrison Schmitt sings \"I Was Strolling on the Moon\" walking on the Moon surface</string>
 </resources>

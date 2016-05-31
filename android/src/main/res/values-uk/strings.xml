@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ПривітМісяць</string>
+    <string name="hellomoon_play">Грати</string>
+    <string name="hellomoon_stop">Стоп</string>
+    <string name="hellomoon_resume">Відновити</string>
+    <string name="hellomoon_pause">Призупинити</string>
+    <string name="hellomoon_loading">Завантаження&#8230;</string>
+    <string name="hellomoon_goto_video">Перейти до відео</string>
+    <string name="hellomoon_audio_description">Ніл Армстронг ступає на поверхню Місяця</string>
+    <string name="hellomoon_video_description">Астронавт Гаррісон Шмітт співає \"Я прогулююсь Місяцем\", пересуваючись стрибками місячною поверхнею</string>
+</resources>
