@@ -29,6 +29,7 @@ public class HelloMoonAudioFragment extends Fragment {
         mGoToVideoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                stopAudioPlayback();
                 startActivity(new Intent(getActivity(), HelloMoonVideoActivity.class));
             }
         });
