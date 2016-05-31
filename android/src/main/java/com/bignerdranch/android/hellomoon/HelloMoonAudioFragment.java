@@ -57,6 +57,7 @@ public class HelloMoonAudioFragment extends Fragment {
 
         if (mPlayer == null) {
             mPlayButton.setText(R.string.hellomoon_play);
+            mStopButton.setEnabled(false);
         } else if (mPlayer.isPlaying()) {
             mPlayButton.setText(R.string.hellomoon_pause);
         } else {
@@ -90,6 +91,8 @@ public class HelloMoonAudioFragment extends Fragment {
         }
 
         mPlayer.start();
+
+        mStopButton.setEnabled(true);
     }
 
     private void stopAudioPlayback() {
@@ -98,6 +101,7 @@ public class HelloMoonAudioFragment extends Fragment {
             mPlayer = null;
 
             mPlayButton.setText(R.string.hellomoon_play);
+            mStopButton.setEnabled(false);
         }
     }
 }
