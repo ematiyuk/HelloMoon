@@ -8,14 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class HelloMoonFragment extends Fragment {
+public class HelloMoonAudioFragment extends Fragment {
     private MediaPlayer mPlayer;
     private Button mPlayButton;
     private Button mStopButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_hello_moon, container, false);
+        View view = inflater.inflate(R.layout.fragment_hello_moon_audio, container, false);
 
         mPlayButton = (Button) view.findViewById(R.id.hellomoon_playButton);
         mPlayButton.setOnClickListener(new View.OnClickListener() {
