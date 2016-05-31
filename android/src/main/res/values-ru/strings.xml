@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ПриветЛуна</string>
+    <string name="hellomoon_play">Играть</string>
+    <string name="hellomoon_stop">Стоп</string>
+    <string name="hellomoon_resume">Возобновить</string>
+    <string name="hellomoon_pause">Приостановить</string>
+    <string name="hellomoon_loading">Загрузка&#8230;</string>
+    <string name="hellomoon_goto_video">Перейти к видео</string>
+    <string name="hellomoon_audio_description">Нил Армстронг ступает на поверхность Луны</string>
+    <string name="hellomoon_video_description">Астронавт Харрисон Шмитт поёт \"Я гуляю по Луне\", передвигаясь прыжками по лунной поверхности</string>
+</resources>

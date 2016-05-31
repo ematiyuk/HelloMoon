@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HolaLuna</string>
+    <string name="hellomoon_play">Tocar</string>
+    <string name="hellomoon_stop">Detener</string>
+    <string name="hellomoon_resume">Continuar</string>
+    <string name="hellomoon_pause">Pausa</string>
+    <string name="hellomoon_loading">Cargando&#8230;</string>
+    <string name="hellomoon_goto_video">Ir al vídeo</string>
+    <string name="hellomoon_audio_description">Neil Armstrong pisando la luna</string>
+    <string name="hellomoon_video_description">El astronauta Harrison Schmitt canta "Yo estaba paseando en la Luna" caminar sobre la superficie de la luna</string>
+</resources>
