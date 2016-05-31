@@ -13,6 +13,8 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class HelloMoonVideoFragment extends Fragment {
+    private static final String KEY_POSITION = "position";
+
     private VideoView mVideoView;
     private int position = 0;
     private MediaController mMediaControls;
@@ -21,6 +23,10 @@ public class HelloMoonVideoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hello_moon_video, container, false);
+
+        if (savedInstanceState != null) {
+            position = savedInstanceState.getInt(KEY_POSITION, 0);
+        }
 
         // set the media controllers buttons
         if (mMediaControls == null) {
@@ -73,5 +79,13 @@ public class HelloMoonVideoFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // use onSaveInstanceState in order to store the video playback position for orientation change
+        outState.putInt(KEY_POSITION, mVideoView.getCurrentPosition());
+        mVideoView.pause();
     }
 }
