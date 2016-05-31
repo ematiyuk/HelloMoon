@@ -3,6 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TableRow
+        android:gravity="right|top"
+        android:layout_weight="0">
+
+        <Button
+            android:id="@+id/hellomoon_gotoVideoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hellomoon_goto_video" />
+
+    </TableRow>
+
     <ImageView
         android:src="@drawable/armstrong_on_moon"
         android:contentDescription="@string/hellomoon_description"
