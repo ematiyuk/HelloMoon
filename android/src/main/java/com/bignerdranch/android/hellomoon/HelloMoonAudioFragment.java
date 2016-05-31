@@ -1,5 +1,6 @@
 package com.bignerdranch.android.hellomoon;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,10 +13,19 @@ public class HelloMoonAudioFragment extends Fragment {
     private MediaPlayer mPlayer;
     private Button mPlayButton;
     private Button mStopButton;
+    private Button mGoToVideoButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hello_moon_audio, container, false);
+
+        mGoToVideoButton = (Button) view.findViewById(R.id.hellomoon_gotoVideoButton);
+        mGoToVideoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), HelloMoonVideoActivity.class));
+            }
+        });
 
         mPlayButton = (Button) view.findViewById(R.id.hellomoon_playButton);
         mPlayButton.setOnClickListener(new View.OnClickListener() {
